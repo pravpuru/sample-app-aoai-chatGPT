@@ -13,8 +13,8 @@ const Layout = () => {
     const [copyClicked, setCopyClicked] = useState<boolean>(false);
     const [copyText, setCopyText] = useState<string>("Copy URL");
     const [shareLabel, setShareLabel] = useState<string | undefined>("Share");
-    const [hideHistoryLabel, setHideHistoryLabel] = useState<string>("Hide chat history");
-    const [showHistoryLabel, setShowHistoryLabel] = useState<string>("Show chat history");
+    const [hideHistoryLabel, setHideHistoryLabel] = useState<string>("Undo history");
+    const [showHistoryLabel, setShowHistoryLabel] = useState<string>("Make history");
     const appStateContext = useContext(AppStateContext)
     const ui = appStateContext?.state.frontendSettings?.ui;
 
@@ -49,12 +49,12 @@ const Layout = () => {
         const handleResize = () => {
           if (window.innerWidth < 480) {
             setShareLabel(undefined)
-            setHideHistoryLabel("Hide history")
-            setShowHistoryLabel("Show history")
+            setHideHistoryLabel("Undo history")
+            setShowHistoryLabel("Make history")
           } else {
             setShareLabel("Share")
-            setHideHistoryLabel("Hide chat history")
-            setShowHistoryLabel("Show chat history")
+            setHideHistoryLabel("Undo History")
+            setShowHistoryLabel("MAke hsitory")
           }
         };
     
